@@ -83,7 +83,6 @@ while not if_way_find_E(maze,add[2],add[3]):
     add = heapq.heappop(nums)
     if f"{add[2],add[3]}" not in visited or visited[f"{add[2],add[3]}"] > add[0]:
         visited[f"{add[2],add[3]}"] = add[0]
-        print(add)
         for j in ["^","v",">",'<']:
             p = add_move_if_possible(maze,add,j)
             if p:

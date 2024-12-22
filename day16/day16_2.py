@@ -20,59 +20,48 @@ def add_move_if_possible(maze,p,d):
         if d == point[1]:
             point[0]+=1
             point[3]+=1
-            # point[4].append((x,y))  
-            
         elif point[1] == '<':
             return None
         else:
             point[0]+=1001
             point[1]=d
             point[3]+=1
-            # point[4].append((x,y))
         return point
             
     elif d == '<' and maze[point[2],point[3]-1] == '.':
         if d == point[1]:
             point[0]+=1
             point[3]-=1
-            # point[4].append((x,y))  
-            
         elif point[1] == '>':
             return None
         else:
             point[0]+=1001
             point[1]=d
             point[3]-=1
-            # point[4].append((x,y))
         return point
             
     elif d == '^' and maze[point[2]-1,point[3]] == '.':
         if d == point[1]:
             point[0]+=1
             point[2]-=1
-            # point[4].append((x,y))  
         elif point[1] == 'v':
             return None
         else:
             point[0]+=1001
             point[1]=d
             point[2]-=1  
-            # point[4].append((x,y))
         return point
             
     elif d == 'v' and maze[point[2]+1,point[3]] == '.':
         if d == point[1]:
             point[0]+=1
             point[2]+=1  
-            # point[4].append((x,y))  
-            
         elif point[1] == '^':
             return None
         else:
             point[0]+=1001
             point[1]=d
             point[2]+=1
-            # point[4].append((x,y))
         return point 
     else:
         return None
@@ -125,7 +114,6 @@ while nums:
         add[4].append((add[2],add[3]))
         add[4].append(e)
         all_tiles = add[4]
-        print(add[0])
         break
     
     
@@ -140,7 +128,6 @@ while start != end:
                 key_index = all_tiles.index(key)
                 x_path = all_tiles[key_index-1][0] - all_tiles[key_index][0]
                 y_path = all_tiles[key_index-1][1] - all_tiles[key_index][1] 
-                print("dupa")
                 all_tiles.extend(val)
                 same_points.pop(key)
                 break
